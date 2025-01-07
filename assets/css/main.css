@@ -58,6 +58,7 @@
 .header-navbar_item-link:hover {
     cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
 }
 
 .header_navbar-user {
@@ -96,6 +97,7 @@
     list-style: none;
     box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
     display: none;
+    animation: fadein ease-in 0.3s;
 }
 
 .header_navbar-user-menu::before {
@@ -144,6 +146,8 @@
 
 .header__navbar-use-item>a:hover {
     background-color: #fafafa;
+    color: var(--primery-color);
+    transition: color 0.3s ease;
 }
 
 
@@ -454,6 +458,87 @@ h3 {
     align-items: center;
     margin: 0 8px;
 }
+/* Nagivation tables */
+.nav-for-tables{
+    right: 0;
+}
+.nav__bars-btn{
+display: none;
+}
+.nav__bars-btn-icon{
+    font-size: 2.4rem;
+    color: var(--white-color);
+    margin-right: 10px;
+}
+.nav__overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+    animation: fadein linear 0.2s;
+}
+.nav__tablet{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: var(--white-color);
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform linear 0.2s, opacity linear 0.2s;
+    opacity: 0;
+
+}
+.nav__tablet-list{
+    margin-top:24px ;
+    list-style: none;
+    font-weight: 600;
+
+}
+.nav__tablet-link{
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.nav__tablet-link:hover{
+    color: var(--primery-color);
+}
+
+.nav__tablet-close{
+    font-size: 2rem;
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.nav__input:checked ~ .nav__overlay {
+    display: block;
+}
+.nav__input:checked ~ .nav__tablet {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.nav__auth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;    
+}
+.nav__auth-btn{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+/*  */
 .header__mobile-search{
     display: none;
     padding: 0 8px;
@@ -531,7 +616,7 @@ h3 {
     border-radius: 2px;
     box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
     display: none;
-    animation: fadein ease-in 0.2s;
+    animation: fadein ease-in 0.3s;
     cursor: default;
     z-index: 1;
 }
@@ -643,7 +728,10 @@ h3 {
 .header__cart-view-cart {
     background-color: #f05d41;
 }
-
+.header__cart-view-cart:hover{
+    background-color:#f89986 ;
+    transition: background-color 0.3s ease;
+}
 .header_cart-list::after {
     content: "";
     position: absolute;
@@ -702,12 +790,13 @@ h3 {
     height: 100%;
     border: none;
     outline: none;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--text-color);
     padding: 0 16px;
     border-radius: 2px;
+    overflow: hidden;
+    display: flex;
 }
-
 .header__search-select {
     color: black;
     border-left: 1px solid #756F6E;
@@ -1114,6 +1203,8 @@ h3 {
 }
 .home-filer__btn:hover{
     background-color: var(--primery-color);
+    color: var(--white-color);
+    transition: color 0.3s ease,background-color 0.3s ease;
 }
 
 .btn---primary {
@@ -1169,7 +1260,7 @@ h3 {
     color: #ccc;
 }
 
-/* Product iten */
+/* Product item */
 .home-product-item {
     display: block;
     margin-top: 10px;
@@ -1393,7 +1484,8 @@ i.home-product-item_heart-icon-fill {
 }
 
 .footer-item__link:hover {
-    color: var(--primery-color);
+    color: var(--white-color);
+    background-color: var(--primery-color);
 }
 
 .footer-item__icon {

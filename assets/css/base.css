@@ -170,6 +170,7 @@ html {
 
 .select-input:hover .select-input__list {
     display: block;
+    animation: fadein linear 0.2s;
 }
 
 .select-input__list {
@@ -213,7 +214,8 @@ html {
     color: var(--white-color);
 }
 .pagination-item .pagination-item__link:hover {
-background-color: #d67a67;
+    background-color: #e67a65;
+    color: var(--white-color);
 }
 .pagination-item__link {
     --height:30px;
